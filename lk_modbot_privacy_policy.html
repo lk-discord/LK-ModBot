@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LK-ModBot — Privacy Policy</title>
+<style>
+  :root {
+    --text: #1a1a1a;
+    --muted: #5a5a5a;
+    --border: #e2e2e2;
+    --accent: #5865F2;
+    --bg-subtle: #f7f7f9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.65;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+    background: #fff;
+  }
+  h1 {
+    font-size: 1.85rem;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 1.25rem;
+    margin-top: 44px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 {
+    font-size: 1.02rem;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+  p, li { font-size: 0.97rem; }
+  ul, ol { padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  .callout {
+    background: var(--bg-subtle);
+    border-left: 3px solid var(--accent);
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin: 20px 0;
+    font-size: 0.95rem;
+  }
+  .placeholder {
+    background: #fff3cd;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  code {
+    background: var(--bg-subtle);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.92rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th { color: var(--muted); font-weight: 600; }
+  footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy — LK-ModBot</h1>
+<p class="subtitle">Last updated: <span class="placeholder">20th September 2026</span> &nbsp;|&nbsp; Effective date: <span class="placeholder">20th September 2026</span></p>
+
+<p>This policy explains what data LK-ModBot ("the Bot") accesses, what it stores, and how it's used. The Bot is operated by Legend Killer ("the Operator") and is installed only in Discord servers the Operator personally manage. It is NOT a publicly-listed bot available for any/every servers to add and the Operator is the sole user that can administrate the bot.</p>
+
+<h2>1. What the Bot does</h2>
+<p>LK-ModBot provides moderation and utility features for the specific servers it's installed in, including:</p>
+<ul>
+  <li>Moderation commands (kick, ban, unban, timeout, member lookup)</li>
+  <li>An automated moderation log (message edits/deletions, joins/leaves, bans/kicks/timeouts, nickname and role changes, permission changes)</li>
+  <li>A configurable blocked-word/regex content filter</li>
+  <li>Detection of self-reported underage users in a single designated channel, to help enforce Discord's own 13+ age requirement</li>
+  <li>A passive, read-only server security/permissions audit for the Operator</li>
+  <li>Attachment-spam detection with automatic banning</li>
+  <li>Sticky channel messages, reminders, and live-stream / service-status notifications</li>
+  <li>A web dashboard where server the Operator configure the above, per server</li>
+</ul>
+
+<h2>2. Data the Bot processes</h2>
+
+<h3>Message content</h3>
+<p>The Bot reads message content in real time, within servers it's installed in, to power the features above (the blocked-word filter, the underage-detection scan, the moderation log's display of edited/deleted content, and generating a reply when the Bot is @mentioned). Message content is <strong>not stored in any/the Bot's database</strong>.</p>
+<div class="callout">
+  <strong>One exception:</strong> when the Operator runs the <code>/remind</code> command, the reminder text they provide as a command argument is stored locally in a private server until it's delivered back to them, then deleted. This is a feature the Operator actively invokes (not passive scanning) and is limited to that one command.
+</div>
+
+<h3>Member and server data</h3>
+<p>The Bot accesses member information (usernames, display names, user IDs, roles) to power moderation commands, the security audit and join/leave/update logging. This data is used transiently/in the moment a command runs or an event fires. <strong>Member profile data is not written to the Bot's database.</strong></p>
+
+<h3>Configuration data (what is actually stored)</h3>
+<p>The only data persisted in the Bot's local database is the Operator-provided <strong>configuration</strong>, scoped per server:</p>
+<table>
+  <tr><th>Stored</th><th>Purpose</th></tr>
+  <tr><td>Channel IDs/role IDs</td><td>Which channels/roles a feature applies to (e.g. the mod-log channel, ignored roles)</td></tr>
+  <tr><td>Blocked word/regex list</td><td>Operator-entered moderation rules</td></tr>
+  <tr><td>Sticky message text</td><td>Operator-entered channel messages</td></tr>
+  <tr><td>Streamer/channel usernames</td><td>Operator-entered, for live-notification features (public usernames only)</td></tr>
+  <tr><td>Reminder text</td><td>Operator-entered via <code>/remind</code>, deleted after delivery</td></tr>
+  <tr><td>Feature toggles/thresholds</td><td>Operator-configured settings (e.g. spam sensitivity, minimum age)</td></tr>
+</table>
+<p>This data is stored in a local database on the Operator's own infrastructure. It is not sold, shared with third parties, or used for advertising.</p>
+
+<h2>3. Data we do <em>NOT</em> collect or do</h2>
+<ul>
+  <li>We do not sell or share user data with third parties.</li>
+  <li>We do not use message content or member data to train machine learning or AI models.</li>
+  <li>We do not track users across servers or build cross-server profiles.</li>
+  <li>We do not access data in servers the Bot has not been added to.</li>
+  <li>We do not collect Presence data (online/offline status, activity) — the Bot does not request this intent.</li>
+</ul>
+
+<h2>4. Third-party services</h2>
+<p>For specific opt-in features, the Bot makes outbound requests to these services' own <strong>public</strong> APIs. No private user or message data is sent to them — only the public usernames/channel identifiers the Operator configures:</p>
+<ul>
+  <li>Twitch, Kick, YouTube, TikTok — to check whether a configured public account is currently live, or has posted a new video</li>
+  <li>discordstatus.com, status.twitch.com — official public status-page APIs, to relay service incident updates</li>
+</ul>
+
+<h2>5. Data retention</h2>
+<p>Configuration data (Section 2) is retained until the Operator removes it via the dashboard or removes the Bot from their server, at which point it can be deleted on request (see Section 7). Message content and member data are not retained beyond the moment they're processed, except the one <code>/remind</code> exception noted above.</p>
+
+<h2>6. Privileged intents</h2>
+<p>The Bot requests two of Discord's three privileged Gateway Intents:</p>
+<ul>
+  <li><strong>Message Content Intent</strong> — required for the blocked-word filter, underage-detection scan, mod-log content display, and @mention replies.</li>
+  <li><strong>Server Members Intent</strong> — required for member lookup commands, the security audit, and join/leave/update logging.</li>
+</ul>
+<p>The Bot does <strong>not</strong> request the Presence Intent.</p>
+
+<h2>7. Your rights and choices</h2>
+<p>Because the Bot is operated per-server by the Operator:</p>
+<ul>
+  <li>The Operator control which features are enabled and can disable or reconfigure any feature, or remove the Bot entirely, at any time via the dashboard or by removing it from Discord.</li>
+  <li>To request access to, or deletion of, configuration data associated with your server, contact <span class="placeholder">Legend Killer</span>.</li>
+  <li>Individual members who want a channel or role exempted from moderation-log or filter scanning should ask the Operator to add it to that feature's ignore list.</li>
+</ul>
+
+<h2>8. Children's privacy</h2>
+<p>Discord requires all users to be 13 or older. The Bot includes an opt-in feature specifically to help the Operator identify and act on self-reported underage users in accordance with Discord's Terms of Service, in a single designated channel. The Bot does not knowingly collect data from users it identifies as under 13 beyond what's needed to action that enforcement (timeout and report to moderators).</p>
+
+<h2>9. Changes to this policy</h2>
+<p>This policy may be updated from time to time. Material changes will be reflected by updating the "Last updated" date at the top of this page.</p>
+
+<h2>10. Contact</h2>
+<p>Questions about this policy or how the Bot handles data: <span class="placeholder">Legend Killer</span></p>
+
+<footer>
+  LK-ModBot Privacy Policy — this document describes the Bot's actual data handling as implemented. 
+</footer>
+
+</body>
+</html>
